@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Juno Project2</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <main>
+    <h1>Get Your Random Amiibo</h1>
+
+    <div class="box">
+            <div class="img-box">
+                <img src="url-to-image" alt="some-alt-text">
+            </div>
+            <p class="img-title">Title of IMG</p>
+            <button onclick="randomBtn">Random Amiibo</button>
+    </div>
+</main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <script>
+    const app = {};
+
+    app.box = $('.img-box');
+
+    app.getRandomIndex = function(array)
+{
+    return Math.floor(Math.random() * array.length);
+}
+   //i need my button to generate a different picture and i need the img to be displayed
+
+    app.displayImages = function(picture){
+        const randomImageObject = picture[app.getRandomIndex(picture)];
+        console.log("obj:", randomImageObject);
+        const randomImage = randomImageObject.image;
+        console.log("randomimage: ", randomImage);
+
+        const htmlToAppend = `
+            <div class="img-box">
+                <img src=${randomImage} alt=${randomImageObject.name}>
+            </div>
+            <p class="img-title">${randomImageObject.name}</p>
+            <button class="randomBtn">Random Amiibo</button>
+    </div>`
+    
+    $(".box").html(htmlToAppend);  
+
+    $(".randomBtn").on('click', app.getAmibo);
+//thank you Asaf
+    };
+
+  
+
+    app.getAmibo = () => {
+        console.log('in get amibo');
+        $.ajax({
+            url: `https://www.amiiboapi.com/api/amiibo/`,
+            method: "GET",
+            dataType: "json",
+            amiibo: {
+                name: 'zelda'
+            }
+        }).then(result => {
+
+            app.displayImages(result.amiibo);
+        });
+    };
+    app.init = function(){
+        app.getAmibo();
+    }
+    $(function() {
+        app.init();
+        //console.log("ready")
+    });
+    </script>
+</body>
+</html>

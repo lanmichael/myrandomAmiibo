@@ -1,0 +1,104 @@
+
+
+
+
+h1 {
+    font-size: calc(5rem + 2vw);
+    font-weight: 300;
+    font-family: 'Lato', sans-serif;
+    color: #fff;
+    padding: 2rem 4rem 2.7rem;
+    border: 0.4rem solid #fff;
+    text-transform: uppercase;
+    text-align: center;
+    animation: flicker 1.5s infinite alternate;
+  }
+
+  main {
+    border: 2px solid rgb(173, 173, 173);
+    background: black;
+    /* border-radius: 10px; */
+    box-shadow:
+      0 0 .5rem #fff,
+      inset 0 0 .5rem #fff,
+      0 0 3rem rgb(6, 15, 44),
+      inset 0 0 3rem rgb(6, 15, 44),
+      0 0 5rem rgb(6, 15, 44),
+      inset 0 0 5rem rgb(6, 15, 44);
+    padding: 3rem 4rem;
+  }
+
+  main p {
+    color: white;
+    text-align: center;
+    font-size: 2.3rem;
+    text-shadow:
+      -0.2rem -0.2rem 0.7rem #08f,
+      0.2rem 0.2rem 0.7rem #08f,
+      0 0 2rem #08f,
+      0 0 4rem #08f,
+      0 0 6rem #08f,
+      0 0 8rem #08f,
+      0 0 10rem #08f;
+  }
+  div{
+        padding:0.3em 1.2em;
+        margin:0 0.3em 0.3em 0;
+        border-radius:2em;
+        box-sizing: border-box;
+        text-decoration:none;
+        font-family:'Roboto',sans-serif;
+        font-weight:300;
+        color:#FFFFFF;
+       
+        text-align:center;
+        transition: all 0.2s;
+    }
+  
+
+  button {
+    display: inline-block;
+    padding:0.3em 1.2em;
+    margin:0 0.3em 0.3em 0;
+    border-radius:2em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:#FFFFFF;
+    background-color:#4eb5f1;
+    text-align:center;
+    transition: all 0.2s;
+    }
+img{
+    display: inline-block;
+    padding:0.3em 1.2em;
+    margin:0 0.3em 0.3em 0;
+    border-radius:2em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:#FFFFFF;
+    background-color:#4eb5f1;
+    text-align:center;
+    transition: all 0.2s;
+}
+
+  @media (max-width: 580px) {
+    main {
+      padding: 2rem;
+    }
+  
+    h1 {
+      font-size: 4.4rem;
+    }
+  
+    button{
+      font-size: 2rem;
+      padding: 0.7rem 1.5rem 0.7rem;
+    }
+  
+    
+  }
+  
